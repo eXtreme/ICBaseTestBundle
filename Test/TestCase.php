@@ -64,4 +64,19 @@ abstract class TestCase extends BaseTestCase
 
         return new $helperClass($this);
     }
+
+    /**
+     * Create a mock object of a given class name.
+     *
+     * @param string $class Class name
+     *
+     * @return mixed
+     */
+    public function createMock($class)
+    {
+        return $this
+            ->getMockBuilder($class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
 }
